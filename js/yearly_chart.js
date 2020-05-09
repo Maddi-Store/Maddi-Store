@@ -21,7 +21,7 @@ if (chLine) {
     scales: {
       yAxes: [{
         ticks: {
-          beginAtZero: false
+          beginAtZero: true
         }
       }]
     },
