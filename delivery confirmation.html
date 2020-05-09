@@ -40,19 +40,49 @@
 <div class="container text-dark bg-light p-4">
   <div class="row">
 <div class="col-md-4 col-6 col-lg-12">
-	<h2 class="text-center">Login</h2>
+  <h2 class="text-center">Delivery Data</h2>
   <form>
   <div class="form-group">
-    <label for="exampleInputEmail1">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    <label for="InputReceiverAddress">Receiver Address</label>
+    <input type="receiveraddress" class="form-control" id="InputreceiverAddress" aria-describedby="receiverAddressHelp" placeholder="Receiver Address">
   </div>
   <div class="form-group">
-    <label for="exampleInputPassword1">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+    <label>City</label>
+	<dd>
+	<select class="form-control form-control-sm">
+		<option> Gresik </option>
+		<option> Lamongan </option>
+		<option> Madiun </option>
+		<option> Malang </option>
+		<option> Sidoarjo </option>
+		<option> Surabaya </option>
+	</select>
+  </dd>
   </div>
-  <button type="submit" class="btn btn-outline-dark">Sign In</button>
-  <a type="submit" class="btn btn-outline-secondary" role="button" href="registrasi.html">Sign Up</a>
+  <div class="form-group">
+    <label for="InputPostalCode">Postal Code</label>
+    <input type="postalcode" class="form-control" id="InputPostalCode" aria-describedby="PostalCodeHelp" placeholder="Postal Code">
+  </div>
+  <div class="form-group">Courier<br>
+    <dd>
+	<select class="form-control form-control-sm">
+		<option> JNE </option>
+		<option> J&T </option>
+		<option> Tiki </option>
+		<option> Ninja Express </option>
+		<option> DHL </option>
+	</select>
+  </dd>
+  </div>
+  <div class="form-group">
+    <label for="InputReceiverName">Receiver Name</label>
+    <input type="receivername" class="form-control" id="InputReceiverName" aria-describedby="ReceiverNameHelp" placeholder="Receiver Name">
+  </div>
+  <div class="form-group">
+    <label for="InputMessage">Message</label>
+    <input type="message" class="form-control" id="InputMessage" aria-describedby="MessageHelp" placeholder="Message">
+  </div>
+  <a href="payment.html" type="signup" class="btn btn-outline-secondary"> Next </a>
   </form>
 </div>
       </div>
