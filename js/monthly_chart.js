@@ -1,6 +1,7 @@
 var colors = ['#007bff','#28a745','#333333','#c3e6cb','#dc3545','#6c757d'];
 
 /* large line chart */
+var income = ['1.300.000', '725.000', '200.000', '250.000', '1.225.000', '450.000', '0', '300.000', '875.000', '600.000', '1.125.000', '250.000', '650.000', '500.000', '0', '400.000', '900.000', '1.125.000', '250.000', '400.000', '0', '750.000', '1.000.000', '300.000', '1.225.000', '550.000', '1.675.000', '800.000', '0']
 var chMonthFeb = document.getElementById("chMonthFeb");
 var chartData = {
   labels: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", 
@@ -22,6 +23,15 @@ if (chMonthFeb) {
   type: 'bar',
   data: chartData,
   options: {
+    tooltips: {
+      enabled: true,
+      mode: 'single',
+      callbacks: {
+        label: function(tooltipItems, data) { 
+          return "Products sold: " + tooltipItems.yLabel + ", Income: Rp." + income[tooltipItems.datasetIndex];
+        }
+      }
+    },
     scales: {
       yAxes: [{
         ticks: {

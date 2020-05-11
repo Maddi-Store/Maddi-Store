@@ -1,6 +1,9 @@
 var colors = ['#a9b2b3','#8c7874','#a07b6c','#685444','#9f731d'];
 
 /* large line chart */
+var income = ['600.000', '275.000', '400.000', '200.000', '200.000'];
+var products = [2, 1, 2, 1, 1];
+
 var chPie = document.getElementById("chPie");
 var chartData = {
 	labels: ["Mylah", "Rezq", "Fajr", "Etta", "Gello"],
@@ -20,6 +23,17 @@ if (chPie) {
   pieChart = new Chart(chPie, {
   type: 'pie',
   data: chartData,
+  options: {
+    tooltips: {
+      enabled: true,
+      mode: 'single',
+      callbacks: {
+        label: function(tooltipItems, data) { 
+          return "Products sold: " + products[tooltipItems.index] + ", Total income: Rp." + income[tooltipItems.index];
+        }
+      }
+    }
+  }
   });
 }
 
