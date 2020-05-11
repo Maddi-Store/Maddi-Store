@@ -24,7 +24,7 @@ if (chLine2019) {
 		mode: 'single',
 		callbacks: {
 			label: function(tooltipItems, data) { 
-				return "Products sold: " + tooltipItems.yLabel + ", Income: Rp." + income2019[tooltipItems.datasetIndex];
+				return "Products sold: " + tooltipItems.yLabel + ", Income: Rp." + income2019[tooltipItems.index];
 			}
 		}
 	},
@@ -65,7 +65,7 @@ if (chLine2020) {
 		mode: 'single',
 		callbacks: {
 			label: function(tooltipItems, data) { 
-				return "Products sold: " + tooltipItems.yLabel + ", Income: Rp." + income2020[tooltipItems.datasetIndex];
+				return "Products sold: " + tooltipItems.yLabel + ", Income: Rp." + income2020[tooltipItems.index];
 			}
 		}
 	},

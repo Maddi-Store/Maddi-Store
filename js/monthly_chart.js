@@ -28,7 +28,7 @@ if (chMonthFeb) {
       mode: 'single',
       callbacks: {
         label: function(tooltipItems, data) { 
-          return "Products sold: " + tooltipItems.yLabel + ", Income: Rp." + income[tooltipItems.datasetIndex];
+          return "Products sold: " + tooltipItems.yLabel + ", Income: Rp." + income[tooltipItems.index];
         }
       }
     },
