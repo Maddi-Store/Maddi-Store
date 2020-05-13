@@ -46,7 +46,7 @@ chPie.onclick = function(e)
       // add case for each label/slice
       case 'Mylah':
 //         alert('clicked on Feb');
-         window.location.href = 'Mylah.html';
+         window.location.href = 'Mylah_Manager.html';
          break;
  
    }
