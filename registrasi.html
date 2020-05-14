@@ -38,28 +38,34 @@
   </nav>
 <div class="container text-dark bg-light p-4">
   <div class="row">
-<div class="col-md-4 col-6 col-lg-12">
-	<h2 class="text-center">Sign Up</h2>
+<div class="col-lg-12">
+  <h2 class="text-center">Create Your Maddi Account</h2>
+  <h5 class="text-center">Already have an Maddi Account? <a href="login.html">Sign In</a></h5>
   <form>
   <div class="form-group">
-    <label for="InputName">Name</label>
-    <input type="name" class="form-control" id="InputName" aria-describedby="NameHelp" placeholder="Name">
+    <label for="InputName">Name<strong style="color: #C40003">*</strong></label>
+    <input type="text" class="form-control" required id="InputName" aria-describedby="NameHelp" placeholder="Name">
   </div>
   <div class="form-group">
-    <label for="InputBornDate">Date of Birth</label>
-    <input type="BornDate" class="form-control" id="InputBornDate" aria-describedby="BornDateHelp" placeholder="Birth of Date">
+    <label for="InputBirthday">Date of Birth<strong style="color: #C40003">*</strong></label><br>
+	<input type="date" class="form-control" id="Birthdate" aria-describedby="dateHelp" required>
+<!--
+    <input class="form-control d-inline text-center" style="width: 5%" type="BirthDate" id="InputBirthDate" aria-describedby="BirthDateHelp" placeholder="dd" maxlength="2" required>/
+    <input type="BirthMonth" class="form-control d-inline text-center" style="width: 5%" id="InputBirthMonth" aria-describedby="BirthMonthHelp" placeholder="mm" maxlength="2" required>/
+	<input type="BirthYear" class="form-control d-inline text-center" style="width: 6%" id="InputBirthYear" aria-describedby="BirthYearHelp" placeholder="yyyy" maxlength="4" required>
+-->
   </div>
   <div class="form-group">
-    <label>Gender</label>
+    <label>Gender<strong style="color: #C40003">*</strong></label>
    <dd>
 	 <select class="form-control form-control-sm">
-	 <option> Laki-laki </option>
-	 <option> Perempuan </option>
+	 <option> Male </option>
+	 <option> Female </option>
 	 </select>
    </dd>
   </div>
   <div class="form-group">
-    <label>City</label>
+    <label>City<strong style="color: #C40003">*</strong></label>
 	<dd>
 	<select class="form-control form-control-sm">
 		<option> Gresik </option>
@@ -73,26 +79,59 @@
   </div>
   
   <div class="form-group">
-    <label for="InputAddress">Address</label>
-    <input type="address" class="form-control" id="InputAddress" aria-describedby="AddressHelp" placeholder="Address">
+    <label for="InputAddress">Address<strong style="color: #C40003">*</strong></label>
+    <input type="text" class="form-control" id="InputAddress" aria-describedby="AddressHelp" placeholder="Address" required>
   </div>
   <div class="form-group">
-    <label for="InputPostalCode">Postal Code</label>
-    <input type="postalcode" class="form-control" id="InputPostalCode" aria-describedby="PostalCodeHelp" placeholder="Postal Code">
+    <label for="InputPostalCode">Postal Code<strong style="color: #C40003">*</strong></label>
+    <input type="number" class="form-control" id="InputPostalCode" aria-describedby="PostalCodeHelp" placeholder="Postal Code" required>
   </div>
   <div class="form-group">
-    <label for="InputEmail">E-mail Address</label>
-    <input type="email" class="form-control" id="InputEmail" aria-describedby="emailHelp" placeholder="E-mail">
+    <label for="InputEmail">E-mail Address<strong style="color: #C40003">*</strong></label>
+    <input type="email" class="form-control" id="InputEmail" aria-describedby="emailHelp" placeholder="E-mail" required>
   </div>
   <div class="form-group">
-    <label for="InputPassword">Password</label>
-    <input type="password" class="form-control" id="InputPassword" placeholder="Password">
+    <label for="InputPassword">Password<strong style="color: #C40003">*</strong></label>
+    <input type="password" class="form-control" id="InputPassword" placeholder="Password" required>
 	  </div>
   <div class="form-group">
-	<label for="InputConfirmPassword">Confirm Password</label>
-    <input type="password" class="form-control" id="InputConfirmPassword" placeholder="Confirm Password">
+	<label for="InputConfirmPassword">Confirm Password<strong style="color: #C40003">*</strong></label>
+    <input type="password" class="form-control" id="InputConfirmPassword" placeholder="Confirm Password" required>
   </div>
-  <button type="signup" class="btn btn-outline-secondary">Sign Up</button>
+  <button type="submit" class="btn btn-outline-secondary" onClick="CreateAccountHandler()">Create Account</button>
+   <script>
+	  function CreateAccountHandler(){
+		  var name = document.getElementById("InputName").value;
+//		  var birthday = document.getElementById("InputBirthDate").value;
+//		  var birthmonth = document.getElementById("InputBirthMonth").value;
+//		  var birthyear = document.getElementById("InputBirthYear").value;
+		  var address = document.getElementById("InputAddress").value;
+		  var postalcode = document.getElementById("InputPostalCode").value;
+		  var email = document.getElementById("InputEmail").value;
+		  var pass = document.getElementById("InputPassword").value;
+		  var confpass = document.getElementById("InputConfirmPassword").value;
+		  
+//			if (name == null || name == "", birthday == null || birthday == "", birthmonth == null || birthmonth == "", birthyear == null || birthyear == "", address == null || address == "", postalcode == null || postalcode == "", email == null || email == "") {
+			if (name == null || name == "", address == null || address == "", postalcode == null || postalcode == "", email == null || email == "", pass == null || pass == "", confpass == null || confpass == "") {
+//			  alert("Please Fill All Required Field");
+			  window.location.href="#"
+			  return false;
+			}
+		    else if (pass.length < 8)
+			{
+			  alert("Password length must be at least 8 characters");
+			  window.location.href="#"
+			}
+		  	else if (pass != confpass) {
+			  alert("Password does not match confirmation");
+			  window.location.href="#"
+			}
+		  	else{
+				alert("Register Success!");
+				window.location.href="login.html"
+			}
+	  }
+  </script>
   </form>
 </div>
       </div>
