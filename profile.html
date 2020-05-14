@@ -7,13 +7,12 @@
     <title>Maddi</title>
     <!-- Bootstrap -->
     <link href="css/bootstrap-4.0.0.css" rel="stylesheet">
-  	<link href="css/upload.css" rel="stylesheet">
   </head>
   <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
   <div class="container">
 	  
-        <a class="navbar-brand" href="index_Manager.html">
+        <a class="navbar-brand" href="index.html">
 	  	<img class="mr-3" src="images/Maddi.png" alt="Generic placeholder image"></a>
 	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
@@ -21,10 +20,9 @@
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-              <a class="nav-link" href="index_Manager.html">Home <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
             </li>
-			<li class="nav-item"> <a class="nav-link" href="products_Manager.html">Store</a> </li>
-            <li class="nav-item"> <a class="nav-link active" href="report_yearly_2020.html">Reports</a> </li>
+			<li class="nav-item"> <a class="nav-link" href="products.html">Store</a> </li>
           </ul>
           <form class="form-inline my-2 my-lg-0 mr-3">
             <input class="form-control" type="search" placeholder="Search" aria-label="Search">
@@ -32,33 +30,51 @@
 			   <img src="images/search.png" alt="First slide" width="28" height="28" class="d-block">
 			</button>
           </form>
-		  <ul class="navbar-nav">
-		    <li class="nav-item"><a class="nav-link" href="login.html">Logout</a></li>
-	      </ul>
+		  <ul class="navbar-nav"> 
+			<li class="nav-item"><a class="nav-link active" href="login.html">Login</a></li>
+		  </ul>
 		</div>
   </div>
   </nav>
-	<div class="container text-dark bg-light p-4"> 
-	  <div class="container">
-		<div class="row my-3">
-			<div class="col">
-			  <h2 class="text-center">Report</h2>
-			  <h4 class="text-center">February <a href="report_yearly_2020.html" class="text-dark">2020</a></h4>
-			</div>
-		</div>
-		<div class="row my-2">
-			<div class="col-md-12">
-				<div class="card">
-					<div class="card-body">
-						<canvas id="chMonthFeb" height="100"></canvas>
-					</div>
-				</div>
-			</div>
-		</div>
-		  <div class="text-center h2">Total Pendapatan:<br>
-		Rp. 17,875,000.00
-		</div>
-	</div>
+	  <h2 class="text-center">My Profile</h2>
+<div class="container text-dark bg-light p-4">
+  <div class="row">
+<div class="col-md-4 col-6 col-lg-12">
+  
+  <form>
+  <div class="form-group">
+    <label for="InputName" class="font-weight-bold">Name</label>
+    <p set contenteditable="true">Abdul Rozak B.</p>
+  </div>
+  <div class="form-group">
+    <label for="InputBornDate" class="font-weight-bold">Date of Birth</label>
+	<p set contenteditable="true">04/25/2000</p> 
+  </div>
+  <div class="form-group">
+    <label class="font-weight-bold">Gender</label>
+   <p set contenteditable="true">L</p>
+  </div>
+  <div class="form-group">
+    <label class="font-weight-bold">City</label>
+  <p set contenteditable="true">Surabaya</p>
+  </div>
+  
+  <div class="form-group">
+    <label for="InputAddress" class="font-weight-bold">Address</label>
+    <p set contenteditable="true">Penjaringan No.3, Surabaya</p>
+  </div>
+  <div class="form-group">
+    <label for="InputPostalCode" class="font-weight-bold">Postal Code</label>
+    <p set contenteditable="true">62626</p>
+  </div>
+  <div class="form-group">
+    <label for="InputEmail" class="font-weight-bold">E-mail Address</label>
+    <p set contenteditable="true">rozakb@gmail.com</p>
+  </div>
+	  <div class="text-center"><a href="#" class="btn btn-sm btn-primary"> Save </a></div>
+  </form>
+</div>
+      </div>
   </div>
     <footer class="text-center border-top">
       <div class="container">
@@ -72,9 +88,7 @@
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
   <script src="js/jquery-3.2.1.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
   <script src="js/popper.min.js"></script>
   <script src="js/bootstrap-4.0.0.js"></script>
-  <script src="js/monthly_chart.js"></script>
   </body>
 </html>

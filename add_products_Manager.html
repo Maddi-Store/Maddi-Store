@@ -7,13 +7,12 @@
     <title>Maddi</title>
     <!-- Bootstrap -->
     <link href="css/bootstrap-4.0.0.css" rel="stylesheet">
-  	<link href="css/upload.css" rel="stylesheet">
   </head>
   <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
   <div class="container">
 	  
-        <a class="navbar-brand" href="index_Pelanggan.html">
+        <a class="navbar-brand" href="index.html">
 	  	<img class="mr-3" src="images/Maddi.png" alt="Generic placeholder image"></a>
 	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
@@ -21,10 +20,9 @@
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-              <a class="nav-link" href="index_Pelanggan.html">Home <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
             </li>
-			<li class="nav-item"> <a class="nav-link active" href="products_Pelanggan.html">Store</a> </li>
-			  <li class="nav-item"> <a class="nav-link" href="order.html">Orders</a> </li>
+			<li class="nav-item"> <a class="nav-link" href="products.html">Store</a> </li>
           </ul>
           <form class="form-inline my-2 my-lg-0 mr-3">
             <input class="form-control" type="search" placeholder="Search" aria-label="Search">
@@ -33,46 +31,29 @@
 			</button>
           </form>
 		  <ul class="navbar-nav"> 
-			<li class="nav-item"><div class="dropdown">
-  <div class="dropdown-toggle btn-light" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="images/user.png">
-  </div>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item" href="profile.html">Profile</a>
-    <a class="dropdown-item" href="login.html">Log Out</a>
-  </div>
-</div></li>
+			<li class="nav-item"><a class="nav-link active" href="login.html">Login</a></li>
 		  </ul>
 		</div>
   </div>
   </nav>
 <div class="container text-dark bg-light p-4">
   <div class="row">
-	<div class="col-md-4 col-6 col-lg-12">
-		<h2 class="text-center">Payment Method</h2>
-		<hr>
-		<div class="container text-dark bg-light p-4">
-      <div class="row">
-<div class="col-md-4 col-6 col-lg-12">
-  
-  <address>
-  <strong> Payment Procedures </strong>&nbsp;
-  </address>
-  <address>
-  1. Pay your product to one of these Bank Account <br>
-  BCA <br>
-  1234567890 <br>
-  an. Abdul Rozak Baharudin<br>
-  Mandiri <br>
-  1234567890123456 <br>
-  an. Abdul Rozak Baharudin<br>
-  2. Transfer to bank account listed above with the same amount showed in your orders screen<br>
-  3. Upload your payment receipt below <br>
-  *If your payment is not success between 4 hours, then your order will be cancelled automatically
-  </address>
+<div class="col-lg-12">
+  <h2 class="text-center">Add Products</h2>
+  <form>
+  <div class="form-group">
+    <label for="InputName">Name<strong style="color: #C40003">*</strong></label>
+    <input type="text" class="form-control" required id="InputName" aria-describedby="NameHelp" placeholder="Name">
   </div>
-  </div>
-  </div>
-		<div class="container py-5">
+  <div class="form-group">
+    <label for="InputPrice">Price<strong style="color: #C40003">*</strong></label>
+    <input type="text" class="form-control" required id="InputPrice" aria-describedby="PriceHelp" placeholder="Price">
+</div>
+  <div class="form-group">
+    <label for="InputDescription">Description<strong style="color: #C40003">*</strong></label>
+    <input type="text" class="form-control" id="InputDescription" aria-describedby="DescriptionHelp" placeholder="Description" required>
+</div>
+	  <div class="container py-5">
 
 			<!-- For demo purpose -->
 			
@@ -82,7 +63,7 @@
 					<!-- Upload image input-->
 					<div class="input-group mb-3 px-2 py-2 rounded-pill bg-white shadow-sm">
 						<input id="upload" type="file" onchange="readURL(this);" class="form-control border-0">
-						<label id="upload-label" for="upload" class="font-weight-light text-muted">Upload Payment Receipt</label>
+						<label id="upload-label" for="upload" class="font-weight-light text-muted">Upload Product Image</label>
 						<div class="input-group-append">
 							<label for="upload" class="btn btn-light m-0 rounded-pill px-4"> <i class="fa fa-cloud-upload mr-2 text-muted"></i><small class="text-uppercase font-weight-bold text-muted">Choose File</small></label>
 						</div>
@@ -93,14 +74,30 @@
 					<div class="image-area mt-4"><img id="imageResult" src="#" alt="" class="img-fluid rounded shadow-sm mx-auto d-block"></div>
 
 				</div>
-			</div>
-			<div class="text-center">
-				<a href="payment_status_pelanggan.html" class="btn btn-sm btn-primary"> Next </a>
-			</div>
+		  </div>
 			
 		</div>
-
-	</div>
+	  <div class="text-center"><button type="submit" class="btn btn-outline-secondary" onClick="CreateAccountHandler()">Add Product</button></div>
+  
+   <script>
+	  function CreateAccountHandler(){
+		  var name = document.getElementById("InputName").value;
+		  var Price = document.getElementById("InputPrice").value;
+		  var description = document.getElementById("InputDescription").value;
+		  
+			if (name == null || name == "", Pricerice == null || Price == "", description == null || description == "") {
+//			  alert("Please Fill All Required Field");
+			  window.location.href="#"
+			  return false;
+			}
+		  	else{
+				alert("Register Success!");
+				window.location.href="products_Manager.html"
+			}
+	  }
+  </script>
+  </form>
+</div>
       </div>
   </div>
     <footer class="text-center border-top">
@@ -117,6 +114,5 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
   <script src="js/popper.min.js"></script>
   <script src="js/bootstrap-4.0.0.js"></script>
-  <script src="js/upload.js"></script>
   </body>
 </html>
