@@ -25,10 +25,23 @@
             <li class="nav-item"> <a class="nav-link" href="order.html">Orders</a> </li>
           </ul>
           <form class="form-inline my-2 my-lg-0 mr-3">
-            <input class="form-control" type="search" placeholder="Search" aria-label="Search">
-			<button class="btn btn-sm border" style="background-color:transparent;">
+            <input id="lookFor" class="form-control" type="search" placeholder="Search" aria-label="Search">
+			<button class="btn btn-sm border" style="background-color:transparent;" onClick="return search()">
 			   <img src="images/search.png" alt="First slide" width="28" height="28" class="d-block">
 			</button>
+			<script>
+			  function search(){
+				  var lookFor = document.getElementById("lookFor").value;
+				  if (lookFor.toLowerCase() == "mylah"){
+					 window.location.href = "search_mylah.html";
+					 return false;
+				  }
+				  else if (lookFor != null && lookFor != ""){
+					window.location.href = "search_not_found.html";
+					return false;
+				  }
+			  }
+			</script>
           </form>
 		  <ul class="navbar-nav"> 
 			<li class="nav-item"><div class="dropdown">
