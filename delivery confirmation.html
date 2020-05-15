@@ -64,7 +64,7 @@
   <form>
   <div class="form-group">
     <label for="InputReceiverAddress">Receiver Address<strong style="color: #C40003">*</strong></label>
-    <input type="receiveraddress" class="form-control" id="InputreceiverAddress" aria-describedby="receiverAddressHelp" placeholder="Receiver Address" value="Penjaringan No.3, Perumahan Raya Jaya">
+    <input type="text" class="form-control" id="InputreceiverAddress" aria-describedby="receiverAddressHelp" placeholder="Receiver Address" value="Penjaringan No.3, Perumahan Raya Jaya" required>
   </div>
   <div class="form-group">
     <label>City<strong style="color: #C40003">*</strong></label>
@@ -81,7 +81,7 @@
   </div>
   <div class="form-group">
     <label for="InputPostalCode">Postal Code<strong style="color: #C40003">*</strong></label>
-    <input type="postalcode" class="form-control" id="InputPostalCode" aria-describedby="PostalCodeHelp" placeholder="Postal Code" value="62626">
+    <input type="number" class="form-control" id="InputPostalCode" aria-describedby="PostalCodeHelp" placeholder="Postal Code" value="62626" required>
   </div>
   <div class="form-group">Courier<strong style="color: #C40003">*</strong><br>
     <dd>
@@ -96,13 +96,27 @@
   </div>
   <div class="form-group">
     <label for="InputReceiverName">Receiver Name<strong style="color: #C40003">*</strong></label>
-    <input type="receivername" class="form-control" id="InputReceiverName" aria-describedby="ReceiverNameHelp" placeholder="Receiver Name">
+    <input type="text" class="form-control" id="InputReceiverName" aria-describedby="ReceiverNameHelp" placeholder="Receiver Name" value="Abdul Rozak B." required>
   </div>
   <div class="form-group">
     <label for="InputMessage">Message</label>
-    <input type="message" class="form-control" id="InputMessage" aria-describedby="MessageHelp" placeholder="Message">
+    <input type="text" class="form-control" id="InputMessage" aria-describedby="MessageHelp" placeholder="Message">
   </div>
-  <a href="payment.html" type="signup" class="btn btn-outline-secondary"> Next </a>
+  	  <div class="text-center"><button type="submit" class="btn btn-outline-secondary" onClick="ConfirmDelivery()">Next</button></div>
+  
+   <script>
+	  function ConfirmDelivery(){
+		  var name = document.getElementById("InputReceiverName").value;
+		  var address = document.getElementById("InputreceiverAddress").value;
+		  var post = document.getElementById("InputPostalCode").value;
+		  
+			if (name == null || name == "", address == null || address == "", post == null || post == "") {
+//			  alert("Please Fill All Required Field");
+			  window.location.href="#"
+			  return false;
+			}
+	  }
+  </script>
   </form>
 </div>
       </div>

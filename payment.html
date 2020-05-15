@@ -94,7 +94,7 @@
 
 					<!-- Upload image input-->
 					<div class="input-group mb-3 px-2 py-2 rounded-pill bg-white shadow-sm">
-						<input id="upload" type="file" onchange="readURL(this);" class="form-control border-0">
+						<input id="upload" type="file" onchange="readURL(this);" class="form-control border-0" required>
 						<label id="upload-label" for="upload" class="font-weight-light text-muted">Upload Payment Receipt</label>
 						<div class="input-group-append">
 							<label for="upload" class="btn btn-light m-0 rounded-pill px-4"> <i class="fa fa-cloud-upload mr-2 text-muted"></i><small class="text-uppercase font-weight-bold text-muted">Choose File</small></label>
@@ -108,9 +108,23 @@
 				</div>
 			</div>
 			<div class="text-center">
-				<a href="payment_status_pelanggan.html" class="btn btn-sm btn-primary"> Upload and Send Notification </a>
+				<button type="submit" class="btn btn-sm btn-primary" onClick="sendNotification()"> Upload and Send Notification </button>
 				<a href="payment_status_pelanggan_belum.html" class="btn btn-sm btn-secondary ml-2"> Skip </a>
 			</div>
+		   <script>
+			  function sendNotification(){
+				  var upload = document.getElementById("upload").value;
+
+					if (upload == null || upload == "") {
+					  alert("Please provide your payment receipt");
+//					  window.location.href="#"
+					  return false;
+					}
+					else{
+						window.location.href="payment_status_pelanggan.html"
+					}
+			  }
+		  </script>
 			
 		</div>
 
