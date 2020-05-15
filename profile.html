@@ -12,7 +12,7 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
   <div class="container">
 	  
-        <a class="navbar-brand" href="index.html">
+        <a class="navbar-brand" href="index_Pelanggan.html">
 	  	<img class="mr-3" src="images/Maddi.png" alt="Generic placeholder image"></a>
 	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
@@ -20,9 +20,10 @@
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-              <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="index_Pelanggan.html">Home <span class="sr-only">(current)</span></a>
             </li>
-			<li class="nav-item"> <a class="nav-link" href="products.html">Store</a> </li>
+      <li class="nav-item"> <a class="nav-link" href="products_Pelanggan.html">Store</a> </li>
+      <li class="nav-item"> <a class="nav-link" href="order.html">Orders</a> </li>
           </ul>
           <form class="form-inline my-2 my-lg-0 mr-3">
             <input id="lookFor" class="form-control" type="search" placeholder="Search" aria-label="Search">
@@ -33,11 +34,11 @@
 			  function search(){
 				  var lookFor = document.getElementById("lookFor").value;
 				  if (lookFor.toLowerCase() == "mylah"){
-					 window.location.href = "search_mylah.html";
+					 window.location.href = "search_mylah_pelanggan.html";
 					 return false;
 				  }
 				  else if (lookFor != null && lookFor != ""){
-					window.location.href = "search_not_found.html";
+					window.location.href = "search_not_found_pelanggan.html";
 					return false;
 				  }
 			  }
