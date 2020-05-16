@@ -119,7 +119,7 @@
 				  <p>Rp. 250.000,00<br></p>
 				  <a href="#" class="btn btn-sm btn-primary"> Status Pembayaran </a>
 				  <a href="#" class="btn btn-sm btn-primary"> Status Pengiriman </a>
-				  <button type="button" class="btn btn-danger btn-sm" onClick="RemoveMane()">
+				  <button type="button" class="btn btn-danger btn-sm" data-target="#removeOrder" data-toggle="modal">
     Batalkan Order
   </button>
 				  
@@ -155,7 +155,7 @@
 </div>
       </div>
     </div>
-		<div class="modal fade" id="removeOrder">
+	<div class="modal fade" id="removeOrder">
     <div class="modal-dialog">
       <div class="modal-content">
       
@@ -163,25 +163,50 @@
         <div class="modal-header">
           <h4 class="modal-title">Order anda akan dihapus</h4>
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-        </div>
+          </div>
         
         <!-- Modal body -->
-        <div class="modal-body">
-          Apakah anda yakin akan menghapus order ini?
-        </div>
+			<div class="modal-body">
+			  Apakah anda yakin akan membatalkan pemasanan ini?
+			</div>
         
         <!-- Modal footer -->
-        <div class="modal-footer">
-          <button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
-		  <button type="button" class="btn btn-danger" onClick="RemoveMane()">Ok</button>
-		<script> 
-			function RemoveMane()
-			{
-				alert("test");
-				document.getElementById('conmane').remove();
-			}
-			</script>
-        </div>
+			<div class="modal-footer">
+			  <button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
+			  <button type="button" class="btn btn-danger" onClick="RemoveMane()"  data-dismiss="modal">Ok</button>
+			<script>
+				function RemoveMane()
+				{
+					document.getElementById('conmane').remove();
+					$("#success").modal()
+				}
+				</script>
+			</div>
+		  </div>
+		</div>
+	</div>
+	<div class="modal fade" id="success">
+		<div class="modal-dialog">
+		  <div class="modal-content">
+
+			<!-- Modal Header -->
+			<div class="modal-header">
+			  <h4 class="modal-title">Pembatalan Berhasil</h4>
+			  <button type="button" class="close" data-dismiss="modal">&times;</button>
+			</div>
+        
+        <!-- Modal body -->
+			<div class="modal-body">
+			  Pesanan telah berhasil dibatalkan.
+			</div>
+        
+        <!-- Modal footer -->
+			<div class="modal-footer">
+			  <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+			</div>
+		  </div>
+		</div>
+	</div>
     <footer class="text-center border-top">
       <div class="container">
         <div class="row">
