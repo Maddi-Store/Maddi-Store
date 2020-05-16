@@ -1,4 +1,4 @@
-var colors = ['#007bff','#28a745','#333333','#c3e6cb','#dc3545','#6c757d'];
+var colors = ['#FFB5E8', '#FF9CEE'];
 
 /* large line chart */
 var income2019 = ['13.200.000', '9.525.000', '10.550.000', '8.575.000', '4.800.000', '8.150.000', '10.575.000', '9.950.000', '7.275.000', '5.100.000', '10.300.000', '18.550.000']
@@ -7,8 +7,8 @@ var chartData = {
   labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
   datasets: [{
     data: [59, 44, 43, 31, 24, 42, 44, 43, 34, 29, 45, 77],
-    backgroundColor: colors[3],
-    borderColor: colors[0],
+    backgroundColor: colors[0],
+    borderColor: colors[1],
     borderWidth: 1,
     pointBackgroundColor: colors[0]
   }]
@@ -48,8 +48,8 @@ var chartData2020 = {
   labels: ["Jan", "Feb", "Mar", "Apr"],
   datasets: [{
     data: [59, 70, 64, 57],
-    backgroundColor: colors[3],
-    borderColor: colors[0],
+    backgroundColor: colors[0],
+    borderColor: colors[1],
     borderWidth: 1,
     pointBackgroundColor: colors[0]
   }]
