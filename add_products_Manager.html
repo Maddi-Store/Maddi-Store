@@ -73,7 +73,7 @@
 			</div>
 			
 		</div>
-	  <div class="text-center"><button type="submit" class="btn btn-outline-secondary" onClick="CreateProductHandler()">Add Product</button></div>
+	  <div class="text-center"><button type="submit" class="btn btn-outline-secondary" onClick="return CreateProductHandler()">Add Product</button></div>
   
    <script>
 	  function CreateProductHandler(){
@@ -82,13 +82,13 @@
 		  var description = document.getElementById("InputDescription").value;
 		  var upload = document.getElementById("upload").value;
 		  
-			if (name == null || name == "", price == null || price == "", description == null || description == "", upload == null || upload == "") {
+			if (name == null || name == "" || price == null || price == "" || description == null || description == "" || upload == null || upload == "") {
 //			  alert("Please Fill All Required Field");
 			  window.location.href="#"
-			  return false;
 			}
-		  	else{
+      else{
 				window.location.href="products_Manager.html"
+			  return false;
 			}
 	  }
   </script>

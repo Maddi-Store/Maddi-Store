@@ -65,24 +65,28 @@
     <label for="exampleInputPassword1">Password</label>
     <input type="password" class="form-control" id="InputPassword" placeholder="Password" required>
   </div>
-  <button type="submit" class="btn btn-outline-dark" style="width: 100%" onClick="signinHandler()">Sign In</button>
+  <button type="submit" class="btn btn-outline-dark" style="width: 100%" onClick="return signinHandler()">Sign In</button>
   <script>
 	  function signinHandler(){
-		  if (document.getElementById("InputEmail").value == "" || document.getElementById("InputEmail").value == null, document.getElementById("InputPassword").value == "" || document.getElementById("InputPassword").value == null){
-			  return false;
+
+		  if (document.getElementById("InputEmail").value == "" || document.getElementById("InputEmail").value == null || document.getElementById("InputPassword").value == "" || document.getElementById("InputPassword").value == null){
+        location.replace('#');
 		  }
 		  else if (document.getElementById("InputEmail").value == "manager@gmail.com" && document.getElementById("InputPassword").value == "manager"){
-			  window.location.href = 'index_Manager.html';
+			  location.replace('index_Manager.html');
+        return false;
 		  }
 		  else if (document.getElementById("InputEmail").value == "pegawai@gmail.com" && document.getElementById("InputPassword").value == "pegawai"){
 			  window.location.href="index_Pegawai.html";
+        return false;
 		  }
 		  else if (document.getElementById("InputEmail").value == "pelanggan@gmail.com" && document.getElementById("InputPassword").value == "pelanggan"){
 			  window.location.href="index_Pelanggan.html";
+        return false;
 		  }
 		  else {
 			  alert("Email or Password is incorrect!");
-			  window.location.href="#";
+        return false;
 		  }
 	  }
   </script>

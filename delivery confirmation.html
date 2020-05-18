@@ -102,7 +102,7 @@
     <label for="InputMessage">Message</label>
     <input type="text" class="form-control" id="InputMessage" aria-describedby="MessageHelp" placeholder="Message">
   </div>
-  	  <div class="text-center"><button type="submit" class="btn btn-outline-secondary" onClick="ConfirmDelivery()">Next</button></div>
+  	  <div class="text-center"><button type="submit" class="btn btn-outline-secondary" onClick="return ConfirmDelivery()">Next</button></div>
   
    <script>
 	  function ConfirmDelivery(){
@@ -110,11 +110,13 @@
 		  var address = document.getElementById("InputreceiverAddress").value;
 		  var post = document.getElementById("InputPostalCode").value;
 		  
-			if (name == null || name == "", address == null || address == "", post == null || post == "") {
-//			  alert("Please Fill All Required Field");
-			  window.location.href="payment.html"
-			  return false;
-			}
+			if (name == null || name == "" || address == null || address == "" || post == null || post == "") {
+        location.replace('#');
+      }
+      else{
+        location.replace('payment.html');
+        return false;
+      }
 	  }
   </script>
   </form>

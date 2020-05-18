@@ -115,7 +115,7 @@
 	<label for="InputConfirmPassword">Confirm Password<strong style="color: #C40003">*</strong></label>
     <input type="password" class="form-control" id="InputConfirmPassword" placeholder="Confirm Password" required>
   </div>
-  <button type="submit" class="btn btn-outline-secondary" onClick="CreateAccountHandler()">Create Account</button>
+  <button type="submit" class="btn btn-outline-secondary" onClick="return CreateAccountHandler()">Create Account</button>
    <script>
 	  function CreateAccountHandler(){
 		  var name = document.getElementById("InputName").value;
@@ -133,7 +133,6 @@
 			if (name == null || name == "", address == null || address == "", postalcode == null || postalcode == "", email == null || email == "", pass == null || pass == "", confpass == null || confpass == "") {
 //			  alert("Please Fill All Required Field");
 			  window.location.href="#"
-			  return false;
 			}
 		    else if (pass.length < 8)
 			{
@@ -144,9 +143,10 @@
 			  alert("Password does not match confirmation");
 			  window.location.href="#"
 			}
-		  	else{
+      else{
 				alert("Register Success!");
 				window.location.href="login.html"
+			  return false;
 			}
 	  }
   </script>
